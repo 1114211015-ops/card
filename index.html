@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap 響應式輪播與卡片作業</title>
+  <!-- 引入 Bootstrap 5 CSS -->
+  <link href="https://jsdelivr.net" rel="stylesheet">
+  <style>
+    /* 固定輪播圖高度並維持圖片比例，避免畫面跳動 */
+    .carousel-item img {
+      height: 450px;
+      object-fit: cover;
+    }
+    /* 卡片圖片固定高度 */
+    .card-img-top {
+      height: 180px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. 輪播圖區塊 (4張圖片) -->
+  <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- 底部指示器 -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+
+    <!-- 輪播圖片內容 (可將 src 替換為你的本地圖片路徑如 images/banner1.jpg) -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://picsum.photos" class="d-block w-100" alt="輪播圖 1">
+      </div>
+      <div class="carousel-item">
+        <img src="https://picsum.photos" class="d-block w-100" alt="輪播圖 2">
+      </div>
+      <div class="carousel-item">
+        <img src="https://picsum.photos" class="d-block w-100" alt="輪播圖 3">
+      </div>
+      <div class="carousel-item">
+        <img src="https://picsum.photos" class="d-block w-100" alt="輪播圖 4">
+      </div>
+    </div>
+
+    <!-- 左右切換按鈕 -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">上一張</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">下一張</span>
+    </button>
+  </div>
+
+  <!-- 2. 12張卡片排版區塊 -->
+  <div class="container-fluid px-4 my-5">
+    <!-- 
+      響應式斷點對應：
+      - row-cols-1       : 576px 以下，一排 1 個
+      - row-cols-sm-2    : 576px ~ 768px，一排 2 個
+      - row-cols-md-4    : 768px ~ 1200px(或1280px)，一排 4 個
+      - row-cols-xl-6    : 1200px(或自訂1280px) 以上，一排 6 個
+    -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-xl-6 g-4">
+      
+      <!-- 卡片 1 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos" class="card-img-top" alt="卡片 1">
+          <div class="card-body">
+            <h5 class="card-title">卡片標題 1</h5>
+            <p class="card-text">這裡是卡片的簡短說明文字內容。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 卡片 2 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos" class="card-img-top" alt="卡片 2">
+          <div class="card-body">
+            <h5 class="card-title">卡片標題 2</h5>
+            <p class="card-text">這裡是卡片的簡短說明文字內容。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 卡片 3 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos" class="card-img-top" alt="卡片 3">
+          <div class="card-body">
+            <h5 class="card-title">卡片標題 3</h5>
+            <p class="card-text">這裡是卡片的簡短說明文字內容。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 卡片 4 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos" class="card-img-top" alt="卡片 4">
+          <div class="card-body">
+            <h5 class="card-title">卡片標題 4</h5>
+            <p class="card-text">這裡是卡片的簡短說明文字內容。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 卡片 5 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos" class="card-img-top" alt="卡片 5">
+          <div class="card-body">
+            <h5 class="card-title">卡片標題 5</h5>
+            <p class="card-text">這裡是卡片的簡短說明文字內容。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 卡片 6 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos" class="card-img-top" alt="卡片 6">
+          <div class="card-body">
+            <h5 class="card-title">卡片標題 6</h5>
+            <p class="card-text">這裡是卡片的簡短說明文字內容。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 卡片 7 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos" class="card-img-top" alt="卡片 7">
+          <div class="card-body">
+            <h5 class="card-title">卡片標題 7</h5>
+            <p class="card-text">這裡是卡片的簡短說明文字內容。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 卡片 8 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos" class="card-img-top" alt="卡片 8">
+          <div class="card-body">
+            <h5 class="card-title">卡片標題 8</h5>
+            <p class="card-text">這裡是卡片的簡短說明文字內容。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 卡片 9 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos" class="card-img-top" alt="卡片 9">
+          <div class="card-body">
+            <h5 class="card-title">卡片標題 9</h5>
+            <p class="card-text">這裡是卡片的簡短說明文字內容。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 卡片 10 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos" class="card-img-top" alt="卡片 10">
+          <div class="card-body">
+            <h5 class="card-title">卡片標題 10</h5>
+            <p class="card-text">這裡是卡片的簡短說明文字內容。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 卡片 11 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos" class="card-img-top" alt="卡片 11">
+          <div class="card-body">
+            <h5 class="card-title">卡片標題 11</h5>
+            <p class="card-text">這裡是卡片的簡短說明文字內容。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 卡片 12 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://picsum.photos" class="card-img-top" alt="卡片 12">
+          <div class="card-body">
+            <h5 class="card-title">卡片標題 12</h5>
+            <p class="card-text">這裡是卡片的簡短說明文字內容。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 引入 Bootstrap 5 JS Bundle -->
+  <script src="https://jsdelivr.net"></script>
+</body>
+</html>
